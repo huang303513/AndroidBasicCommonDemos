@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">android使用全局对象传递数据</string>
+    <string name="title_activity_other">OtherActivity</string>
+</resources>

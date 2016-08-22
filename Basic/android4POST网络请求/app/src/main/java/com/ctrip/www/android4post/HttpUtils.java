@@ -1,6 +1,8 @@
 package com.ctrip.www.android4post;
 
+import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
+import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
@@ -40,7 +42,20 @@ public class HttpUtils {
                 }
             }
             buffer.deleteCharAt(buffer.length() - 1);
-            System.out.println("TEST" + buffer.toString());
+            HttpURLConnection urlConnection = (HttpURLConnection)url.openConnection();
+            urlConnection.setConnectTimeout(3000);
+            urlConnection.setDoInput(true);//表示从服务器获取数据
+            urlConnection.setDoOutput(true);//表示向服务器写数据
+            //获取上传信息的字节大小以及长度
+            byte[] mydata = buffer.toString().getBytes();
+            //设置请求体的一些属性,表示设置请求体的类型是文本类型
+            urlConnection.setRequestProperty("Content-Type","application/x-www-form-urlencoded");
+            urlConnection.setRequestProperty("Content-Length",String.valueOf(mydata.length));
+            //获取输出流/向服务器输出数据
+            OutputStream outputStream = urlConnection.getOutputStream();
+            outputStream.write(mydata);
+            
+            //System.out.println("TEST" + buffer.toString());
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }

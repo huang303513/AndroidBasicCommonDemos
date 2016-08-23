@@ -1,0 +1,1 @@
+include ':app', ':kxml2-2.2.2'

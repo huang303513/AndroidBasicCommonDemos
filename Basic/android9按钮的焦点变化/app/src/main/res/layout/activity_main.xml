@@ -8,29 +8,21 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.ctrip.www.androidedittext.MainActivity">
+    tools:context="com.ctrip.www.android9.MainActivity">
 
-    <EditText
-        android:id="@+id/textView0"
-        android:minLines="1"
-        android:maxLines="2"
+    <Button
+        android:id="@+id/commonbutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="默认提示文本"
-        android:selectAllOnFocus="true"
-        android:textColorHint="#95A1AA"/>
+        android:text="我的按钮一"/>
 
-    <EditText
-        android:id="@+id/textView1"
-        android:inputType="phone"
+    <Button
+        android:id="@+id/imagebutton"
+        android:layout_below="@+id/commonbutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView0"
-        android:text="Hello World!"/>
+        android:background="@drawable/button1"
+        android:gravity="center"
+        android:text="按钮"/>
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView1"
-        android:text="Hello World!"/>
 </RelativeLayout>

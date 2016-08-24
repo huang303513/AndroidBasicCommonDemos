@@ -19,16 +19,17 @@ public class MainActivity extends AppCompatActivity {
     private NetworkChangeReceiver networkChangeReceiver;
 
     //本地广播
+    private LocalReceiver localReceiver;
     private LocalBroadcastManager localBroadcastManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        intentFilter = new IntentFilter();
-        intentFilter.addAction("android.net.conn.CONNECTIVITY_CHANGE");
-        networkChangeReceiver = new NetworkChangeReceiver();
-        registerReceiver(networkChangeReceiver, intentFilter);
+//        intentFilter = new IntentFilter();
+//        intentFilter.addAction("android.net.conn.CONNECTIVITY_CHANGE");
+//        networkChangeReceiver = new NetworkChangeReceiver();
+//        registerReceiver(networkChangeReceiver, intentFilter);
 
         //        Button button = (Button)findViewById(R.id.button);
         //        button.setOnClickListener(new View.OnClickListener() {
@@ -40,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         //                sendOrderedBroadcast(intent,null);
         //            }
         //        });
-
+         //===========================================================
         //本地广播
         localBroadcastManager = LocalBroadcastManager.getInstance(this);
         Button button = (Button) findViewById(R.id.button);
@@ -48,18 +49,27 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent("com.example.broadcasetest.MY_BROADCAST");
-                //sendBroadcast(intent);
-                //有序广播
-                sendOrderedBroadcast(intent, null);
+               localBroadcastManager.sendBroadcast(intent);//发送本地广播
             }
         });
-
+        intentFilter = new IntentFilter();
+        intentFilter.addAction("com.example.broadcasetest.MY_BROADCAST");
+        localReceiver = new LocalReceiver();
+        localBroadcastManager.registerReceiver(localReceiver,intentFilter);
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        unregisterReceiver(networkChangeReceiver);
+        //unregisterReceiver(networkChangeReceiver);
+        unregisterReceiver(localReceiver);
+    }
+
+    class LocalReceiver extends BroadcastReceiver{
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            Toast.makeText(context,"receive local broadcast", Toast.LENGTH_SHORT).show();
+        }
     }
 
     class NetworkChangeReceiver extends BroadcastReceiver {

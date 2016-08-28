@@ -17,17 +17,21 @@ import android.util.Log;
  * 修改备注：
  */
 public class MyService extends Service {
-
+    private DownloadBinder mBinder = new DownloadBinder();
     class DownloadBinder extends Binder{
         public void startDownload(){
-            
+            Log.d("MyService","startDownload executed");
+        }
+        public int getProgress(){
+            Log.d("MyService","getProgress executed");
+            return 0;
         }
     }
 
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
-        return null;
+        return mBinder;
     }
     @Override
     /***
@@ -44,7 +48,6 @@ public class MyService extends Service {
     public int onStartCommand(Intent intent, int flags, int startId) {
         Log.d("MyService","onstartcommand executed");
         return super.onStartCommand(intent, flags, startId);
-
     }
     @Override
     /***

@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         if (view.getId() == R.id.send_request){
             sendRequestWithHttpURLConnection();
+            sendRequestWithHttpClient();
         }
     }
     private void sendRequestWithHttpURLConnection(){
@@ -78,6 +79,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         connection.disconnect();
                     }
                 }
+            }
+        }).start();
+    }
+
+    private void sendRequestWithHttpClient(){
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                //HttpClient httpClient = new DefaultHttpClient();
+                //安卓6.0被废弃了.
             }
         }).start();
     }

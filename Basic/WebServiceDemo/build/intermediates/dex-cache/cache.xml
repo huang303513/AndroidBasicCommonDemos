@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/huangchengdu/Desktop/github/AndroidBasicCommonDemos/Basic/WebServiceDemo/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="6e8445a96a4f4278495559d839076acd9b3c01ec">
+        <dex dex="/Users/huangchengdu/Desktop/github/AndroidBasicCommonDemos/Basic/WebServiceDemo/app/build/intermediates/pre-dexed/debug/instant-run-bootstrap_52a620112ade6657d108b438dce38bbc6bb82b18.jar" />
+    </item>
+    <item
+        jar="/Users/huangchengdu/Library/Android/sdk/extras/android/m2repository/com/android/support/support-v4/18.0.0/support-v4-18.0.0.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="44ec51e9d395a47aab135e5e1b556c0007442156">
+        <dex dex="/Users/huangchengdu/Desktop/github/AndroidBasicCommonDemos/Basic/WebServiceDemo/app/build/intermediates/pre-dexed/debug/support-v4-18.0.0_b7efa3899fb939e211c4ca97b907e5de1683e357.jar" />
+    </item>
+    <item
+        jar="/Users/huangchengdu/Desktop/github/AndroidBasicCommonDemos/Basic/WebServiceDemo/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="49beece063dc5f1277bedc44f7c0247181258892">
+        <dex dex="/Users/huangchengdu/Desktop/github/AndroidBasicCommonDemos/Basic/WebServiceDemo/app/build/intermediates/pre-dexed/debug/instant-run_10df310f311bd52caf2949cca2e6581cb8c3d352.jar" />
+    </item>
+    <item
+        jar="/Users/huangchengdu/Desktop/github/AndroidBasicCommonDemos/Basic/WebServiceDemo/app/libs/ksoap2-android.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="aa6e8d9b65f13e7aff4c0e45f67ca8686998b9e2">
+        <dex dex="/Users/huangchengdu/Desktop/github/AndroidBasicCommonDemos/Basic/WebServiceDemo/app/build/intermediates/pre-dexed/debug/ksoap2-android_f6ce74cffa248ae9782e9235528a84a7a7a5d9cd.jar" />
+    </item>
+
+</items>

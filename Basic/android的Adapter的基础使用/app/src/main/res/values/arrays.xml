@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="myarray">
+        <item>语文</item>
+        <item>数学</item>
+        <item>英语</item>
+        <item>文学</item>
+    </string-array>
+</resources>

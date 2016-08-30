@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/Users/huangchengdu/Desktop/github/AndroidBasicCommonDemos/Basic/WebServiceDemo/app/build/intermediates/res/merged/debug/layout/activity_main.xml",
+        "source": "/Users/huangchengdu/Desktop/github/AndroidBasicCommonDemos/Basic/WebServiceDemo/app/src/main/res/layout/activity_main.xml"
+    },
+    {
+        "merged": "/Users/huangchengdu/Desktop/github/AndroidBasicCommonDemos/Basic/WebServiceDemo/app/build/intermediates/res/merged/debug/layout/weather_layout.xml",
+        "source": "/Users/huangchengdu/Desktop/github/AndroidBasicCommonDemos/Basic/WebServiceDemo/app/src/main/res/layout/weather_layout.xml"
+    }
+]

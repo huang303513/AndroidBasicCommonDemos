@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/Users/huangchengdu/Desktop/github/AndroidBasicCommonDemos/Basic/WebServiceDemo/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_action_search.png",
+        "source": "/Users/huangchengdu/Desktop/github/AndroidBasicCommonDemos/Basic/WebServiceDemo/app/src/main/res/drawable-xhdpi/ic_action_search.png"
+    },
+    {
+        "merged": "/Users/huangchengdu/Desktop/github/AndroidBasicCommonDemos/Basic/WebServiceDemo/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_launcher.png",
+        "source": "/Users/huangchengdu/Desktop/github/AndroidBasicCommonDemos/Basic/WebServiceDemo/app/src/main/res/drawable-xhdpi/ic_launcher.png"
+    }
+]

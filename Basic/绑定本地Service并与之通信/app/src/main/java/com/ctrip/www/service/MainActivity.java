@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.ctrip.www.ServiceUtils.BindService;
+import com.ctrip.www.ServiceUtils.MyIntentService;
 
 public class MainActivity extends AppCompatActivity {
     private Button bind,unbind,getServiceStatus;
@@ -36,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         unbind = (Button) findViewById(R.id.unbind);
         getServiceStatus = (Button) findViewById(R.id.getServiceStatus);
 
+
         //创建启动Service的Intent
         final Intent intent = new Intent(this,BindService.class);
 
@@ -43,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 bindService(intent,connection, Service.BIND_AUTO_CREATE);
+
             }
         });
 
@@ -58,6 +61,15 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Toast.makeText(MainActivity.this,"Service 的count值是:" + binder.getCount(),Toast
                         .LENGTH_SHORT).show();
+            }
+        });
+
+        final Button intentService = (Button) findViewById(R.id.intentService);
+        intentService.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent1 = new Intent(MainActivity.this,MyIntentService.class);
+                startActivity(intent1);
             }
         });
     }

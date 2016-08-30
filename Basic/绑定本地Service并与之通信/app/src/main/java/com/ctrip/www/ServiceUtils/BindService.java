@@ -54,6 +54,11 @@ public class BindService extends Service{
     }
 
     @Override
+    public int onStartCommand(Intent intent, int flags, int startId) {
+        return super.onStartCommand(intent, flags, startId);
+    }
+
+    @Override
     public boolean onUnbind(Intent intent) {
         System.out.println("Service is unBinded");
         return super.onUnbind(intent);

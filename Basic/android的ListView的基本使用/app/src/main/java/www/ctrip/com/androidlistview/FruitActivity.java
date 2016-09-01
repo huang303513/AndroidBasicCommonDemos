@@ -2,7 +2,10 @@ package www.ctrip.com.androidlistview;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +21,15 @@ public class FruitActivity extends AppCompatActivity {
         FruitAdapter adapter = new FruitAdapter(FruitActivity.this, R.layout.fruit_item,fruitList);
         ListView listView = (ListView) findViewById(R.id.list_view);
         listView.setAdapter(adapter);
+
+        listView.setItemsCanFocus(false);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Fruit fruit = fruitList.get(i);
+                Toast.makeText(FruitActivity.this,fruit.getName(),Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private void initFruits() {

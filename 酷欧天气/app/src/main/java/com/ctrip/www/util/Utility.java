@@ -33,7 +33,7 @@ public class Utility {
            String[] allProvinces = response.split(",");
            if (allProvinces != null && allProvinces.length > 0){
                for (String p: allProvinces){
-                   String[] array = p.split("\\/");
+                   String[] array = p.split("\\|");
                    Province province = new Province();
                    province.setProvinceCode(array[0]);
                    province.setProvinceName(array[1]);

@@ -17,6 +17,7 @@ public class GuideActivity extends AppCompatActivity {
     private ImageView imageView1;
     private ImageView imageView2;
     private ImageView imageView3;
+    //当前第几页
     private int currentIndex = 0;
 
     @Override
@@ -27,13 +28,16 @@ public class GuideActivity extends AppCompatActivity {
             getSupportActionBar().hide();
         }
         viewPager = (ViewPager) findViewById(R.id.whatsnew_viewpager);
+        //添加监听器
         viewPager.addOnPageChangeListener(new myOnPageChangeListener());
 
+        //获取四个小圆点对应的view
         imageView0 = (ImageView) findViewById(R.id.page0);
         imageView1 = (ImageView) findViewById(R.id.page1);
         imageView2 = (ImageView) findViewById(R.id.page2);
         imageView3 = (ImageView) findViewById(R.id.page3);
 
+        //获取四个可以滚动的背景view,这个用于提供给ViewpPager
         LayoutInflater layoutInflater = LayoutInflater.from(this);
         View view1 = layoutInflater.inflate(R.layout.whats1,null);
         View view2 = layoutInflater.inflate(R.layout.whats2,null);
@@ -45,7 +49,9 @@ public class GuideActivity extends AppCompatActivity {
         views.add(view2);
         views.add(view3);
         views.add(view4);
-
+        /**
+         * ViewPager的适配器
+         */
         PagerAdapter pagerAdapter = new PagerAdapter() {
             @Override
             public int getCount() {
@@ -74,7 +80,10 @@ public class GuideActivity extends AppCompatActivity {
 
 
     public class myOnPageChangeListener implements ViewPager.OnPageChangeListener{
-
+        /**
+         * 更具不同的索引,更新四个小圆点
+         * @param arg0
+         */
         public void onPageSelected(int arg0) {
             switch (arg0) {
                 case 0:
@@ -121,6 +130,10 @@ public class GuideActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * 第四个页面的点击事件
+     * @param view
+     */
     public void startButton(View view){
         finish();
     }

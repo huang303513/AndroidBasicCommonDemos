@@ -12,6 +12,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.ctrip.www.android.R;
+import com.ctrip.www.util.HttpCallbackListener;
+import com.ctrip.www.util.HttpUtil;
+import com.ctrip.www.util.Utility;
 
 public class WeatherActivity extends AppCompatActivity implements View.OnClickListener {
     private LinearLayout weatherInfoLayout;
@@ -72,7 +75,7 @@ public class WeatherActivity extends AppCompatActivity implements View.OnClickLi
             publishText.setText("同步中");
             weatherInfoLayout.setVisibility(View.INVISIBLE);
             cityNameText.setVisibility(View.INVISIBLE);
-            //queryWeatherCode(countyCode);
+            queryWeatherCode(countyCode);
         }else {
             // 没有县级代号时就直接显示本地天气
             showWeather();
@@ -92,9 +95,73 @@ public class WeatherActivity extends AppCompatActivity implements View.OnClickLi
                 break;
             case R.id.refresh_weather:
                 publishText.setText("同步中...");
-
+                SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+                String weatherCode = prefs.getString("weather_code","");
+                if (!TextUtils.isEmpty(weatherCode)){
+                    queryWeatherInfo(weatherCode);
+                }
+                break;
+            default:
+                break;
         }
     }
+
+    /**
+     * 查询县级代码所对应的天气代号
+     */
+    private void queryWeatherCode(String countyCode){
+        String address = "http://www.weather.com.cn/data/list3/city" + countyCode + ".xml";
+        queryFromServer(address, "countyCode");
+    }
+
+    /**
+     * 查询天气代号所对应的天气
+     */
+    private void queryWeatherInfo(String weatherCode){
+        String address = "http://www.weather.com.cn/data/cityinfo/" + weatherCode + ".html";
+        queryFromServer(address, "weatherCode");
+    }
+
+    /**
+     * 根据传入的地址和类型去向服务器查询天气代号或者天气信息
+     */
+    private void queryFromServer(final  String address, final  String type){
+        HttpUtil.sendHttpRequest(address, new HttpCallbackListener() {
+            @Override
+            public void onFinish(String response) {
+                if ("countyCode".equals(type)) {
+                    if (!TextUtils.isEmpty(response)){
+                        //解析从服务器返回的天气代号
+                        String[] array = response.split("\\|");
+                        if (array != null && array.length == 2){
+                            String weatherCode = array[1];
+                            queryWeatherInfo(weatherCode);
+                        }
+                    }
+                }else if ("weatherCode".equals(type)){
+                    //处理服务器返回的天气信息,解析天气信息,并且保存到prefre
+                    Utility.handleWeatherResponse(WeatherActivity.this,response);
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            showWeather();
+                        }
+                    });
+                }
+            }
+
+            @Override
+            public void onError(Exception e) {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        publishText.setText("同步失败");
+                    }
+                });
+            }
+        });
+    }
+
 
     /**
      * 从SharedPreferences文件中读取存储的天气信息,并显示到界面上。 */

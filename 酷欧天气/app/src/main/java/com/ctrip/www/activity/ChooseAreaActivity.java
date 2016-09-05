@@ -1,6 +1,7 @@
 package com.ctrip.www.activity;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
@@ -82,6 +83,12 @@ public class ChooseAreaActivity extends AppCompatActivity {
                 }else if (currentLevel == LEVEL_CITY){
                     selectedCity = cityList.get(i);
                     queryCounties();
+                }else if (currentLevel == LEVEL_COUNTY){
+                    String countyCode = countyList.get(i).getCountyCode();
+                    Intent intent = new Intent(ChooseAreaActivity.this,WeatherActivity.class);
+                    intent.putExtra("county_code",countyCode);
+                    startActivity(intent);
+                    //finish();
                 }
             }
         });

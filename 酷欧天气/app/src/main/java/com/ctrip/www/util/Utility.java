@@ -115,6 +115,8 @@ public class Utility {
             String temp2 = weatherInfo.getString("temp2");
             String weatherDesp = weatherInfo.getString("weather");
             String publishTime = weatherInfo.getString("ptime");
+            //保存天气信息
+            saveWeatherInfo(context,cityName,weatherCode,temp1,temp2,weatherDesp,publishTime);
         } catch (JSONException e) {
             e.printStackTrace();
         }

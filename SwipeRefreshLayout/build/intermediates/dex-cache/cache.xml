@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/huangchengdu/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.3/support-annotations-21.0.3.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
+        <dex dex="/Users/huangchengdu/Desktop/github/AndroidBasicCommonDemos/SwipeRefreshLayout/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.3_e5cc5a3c2f269d27431e94afef65d353b7a43c2e.jar" />
+    </item>
+    <item
+        jar="/Users/huangchengdu/Desktop/github/AndroidBasicCommonDemos/SwipeRefreshLayout/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="199558cc35b693195f1c86df1f671452db090459">
+        <dex dex="/Users/huangchengdu/Desktop/github/AndroidBasicCommonDemos/SwipeRefreshLayout/app/build/intermediates/pre-dexed/debug/instant-run_e85aa579470c9728c5a2636fad43e7fa4bdf73e5.jar" />
+    </item>
+    <item
+        jar="/Users/huangchengdu/Desktop/github/AndroidBasicCommonDemos/SwipeRefreshLayout/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/jars/libs/internal_impl-21.0.3.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="/Users/huangchengdu/Desktop/github/AndroidBasicCommonDemos/SwipeRefreshLayout/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3_eadc6e145d72ecc3dec767c2b1846193e12dc897.jar" />
+    </item>
+    <item
+        jar="/Users/huangchengdu/Desktop/github/AndroidBasicCommonDemos/SwipeRefreshLayout/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/jars/classes.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="/Users/huangchengdu/Desktop/github/AndroidBasicCommonDemos/SwipeRefreshLayout/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-21.0.3_cd404c9bc751484148de88da4065a8a69eb3df53.jar" />
+    </item>
+    <item
+        jar="/Users/huangchengdu/Desktop/github/AndroidBasicCommonDemos/SwipeRefreshLayout/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="24.0.2"
+        sha1="0bae80d350f92c83ec144e618c1f7aceedfaecd6">
+        <dex dex="/Users/huangchengdu/Desktop/github/AndroidBasicCommonDemos/SwipeRefreshLayout/app/build/intermediates/pre-dexed/debug/instant-run-bootstrap_ec4a2cfb3c1a45a5ddbce591214306d39c609259.jar" />
+    </item>
+
+</items>

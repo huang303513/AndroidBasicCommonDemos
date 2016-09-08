@@ -5,6 +5,7 @@
 [Coding Android开源客户端](https://github.com/huang303513/Coding-Android)</br>
 
 ##参考博客列表
+[Android Studio详细教程汇总 ](http://stormzhang.com/devtools/2015/06/17/android-studio-all/)</br>
 [Android 开发你需要了解的 Gradle 配置](https://zhuanlan.zhihu.com/p/21602684)</br>
 [Android WebService网络请求的实现](http://blog.csdn.net/xiaanming/article/details/16871117)</br>
 [Android开发之线程池使用总结](http://blog.csdn.net/u012702547/article/details/52259529)</br>

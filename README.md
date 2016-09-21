@@ -14,6 +14,7 @@
 [汇总优秀的android开发资源](https://github.com/zmywly8866/Android-Develop-Resources)</br>
 [Android学习资源网站索引大全](https://github.com/zhujun2730/Android-Learning-Resources)</br>
 [Android Studiod的配置大全](http://liukun.engineer/2016/04/10/Android-Studio-advanced-configuration/)<br>
+[深入理解Android的startservice和bindservice](http://www.cnblogs.com/yejiurui/p/3429451.html)</br>
 
 ##入门级教程：
 1老罗的安卓视频：[下载地址](https://pan.baidu.com/s/1cdxoy6)</br>

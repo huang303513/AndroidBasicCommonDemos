@@ -14,6 +14,10 @@ import android.widget.Toast;
 import com.ctrip.www.ServiceUtils.BindService;
 import com.ctrip.www.ServiceUtils.MyIntentService;
 
+/**
+ * //http://blog.csdn.net/gerogelin/article/details/23097013
+ * //http://www.cnblogs.com/yejiurui/p/3429451.html
+ */
 public class MainActivity extends AppCompatActivity {
     private Button bind,unbind,getServiceStatus;
     private BindService.MyBinder binder;
@@ -65,6 +69,9 @@ public class MainActivity extends AppCompatActivity {
         });
 
         final Button intentService = (Button) findViewById(R.id.intentService);
+        /**
+         * intentservice的使用
+         */
         intentService.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

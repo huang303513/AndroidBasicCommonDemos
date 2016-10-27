@@ -29,6 +29,11 @@ public class MainActivity extends AppCompatActivity {
         new NewsAsyncTask().execute(URL);
     }
 
+    /**
+     * 将URl对应的JSON格式数据转化为我们所封装的newsbean对象
+     * @param url
+     * @return
+     */
     private List<NewsBean> getJsonData(String url){
         List<NewsBean> newsBeanList = new ArrayList<>();
         try {
@@ -75,10 +80,20 @@ public class MainActivity extends AppCompatActivity {
         return  result;
     }
 
+    /**
+     * 实现网络的异步访问
+     */
     class NewsAsyncTask extends AsyncTask<String,Void,List<NewsBean>>{
         @Override
         protected List<NewsBean> doInBackground(String... params) {
             return getJsonData(params[0]);
+        }
+
+        @Override
+        protected void onPostExecute(List<NewsBean> newsBeens) {
+            super.onPostExecute(newsBeens);
+            NewsAdapter adapter = new NewsAdapter(MainActivity.this,newsBeens);
+            mListView.setAdapter(adapter);
         }
     }
 }

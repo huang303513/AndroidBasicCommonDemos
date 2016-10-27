@@ -55,6 +55,10 @@ public class NewsAdapter extends BaseAdapter {
             viewHolder = (ViewHolder) convertView.getTag();
         }
         viewHolder.ivIcon.setImageResource(R.mipmap.ic_launcher);
+        String url = mList.get(position).newsIconUrl;
+        viewHolder.ivIcon.setTag(url);
+        //加载网络图片
+        new ImageLoader().showImageByThread(viewHolder.ivIcon,url);
         viewHolder.tvTitle.setText(mList.get(position).newsTitle);
         viewHolder.tvContent.setText(mList.get(position).newsContent);
 

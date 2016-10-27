@@ -58,7 +58,8 @@ public class NewsAdapter extends BaseAdapter {
         String url = mList.get(position).newsIconUrl;
         viewHolder.ivIcon.setTag(url);
         //加载网络图片
-        new ImageLoader().showImageByThread(viewHolder.ivIcon,url);
+       // new ImageLoader().showImageByThread(viewHolder.ivIcon,url);
+        new ImageLoader().showImageByAsyncTask(viewHolder.ivIcon,url);
         viewHolder.tvTitle.setText(mList.get(position).newsTitle);
         viewHolder.tvContent.setText(mList.get(position).newsContent);
 

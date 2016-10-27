@@ -16,10 +16,6 @@
 [Android Studiod的配置大全](http://liukun.engineer/2016/04/10/Android-Studio-advanced-configuration/)<br>
 [深入理解Android的startservice和bindservice](http://www.cnblogs.com/yejiurui/p/3429451.html)</br>
 
-##入门级教程：
-1老罗的安卓视频：[下载地址](https://pan.baidu.com/s/1cdxoy6)</br>
-2第一行代码-Android</br>
-3[2015最新Android基础入门教程](http://www.runoob.com/w3cnote/android-tutorial-end.html)</br>
 
 
 

@@ -1,5 +1,7 @@
 package www.ctrip.com.androiddatepickertimepicker;
 
+import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.DatePicker;
@@ -31,9 +33,38 @@ public class MainActivity extends AppCompatActivity {
         //设置标题
         setTitle(year +"-"+ month + "-" + day + "-" + hour + "-" + minute);
 
-
         mDatePicker = (DatePicker) findViewById(R.id.datePicker);
         mTimePicker = (TimePicker) findViewById(R.id.timePicker);
 
+        mDatePicker.init(year, mCalendar.get(Calendar.MONTH), day, new DatePicker.OnDateChangedListener() {
+            @Override
+            public void onDateChanged(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                setTitle(year +"-"+ (monthOfYear + 1) + "-" + dayOfMonth);
+            }
+        });
+
+        mTimePicker.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
+            @Override
+            public void onTimeChanged(TimePicker view, int hourOfDay, int minute) {
+                setTitle(hourOfDay + ":" + minute);
+            }
+        });
+
+        //日期选择器对话框
+        new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener(){
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                setTitle(year + "-" + (month + 1) + "-" + dayOfMonth);
+            }
+        },year,mCalendar.get(Calendar.MONTH),day).show();
+
+
+        //时间选择器对话框
+        new  TimePickerDialog(this, new TimePickerDialog.OnTimeSetListener() {
+            @Override
+            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                setTitle(hourOfDay + ":" + minute);
+            }
+        },hour,minute,true).show();
     }
 }

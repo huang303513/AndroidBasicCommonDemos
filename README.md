@@ -18,6 +18,7 @@
 [Android Studio权威教程专栏](http://blog.csdn.net/column/details/zsl-androidstudio.html)</br>
 [各种源码解析分析](http://a.codekk.com/)</br>
 [值得阅读的android技术文章](https://github.com/zmywly8866/Worth-Reading-the-Android-technical-articles)</br>
+[android权限检测、提示框、设置相关流程](https://www.jianshu.com/p/dbe4d37731e6)</br>
 
 
 

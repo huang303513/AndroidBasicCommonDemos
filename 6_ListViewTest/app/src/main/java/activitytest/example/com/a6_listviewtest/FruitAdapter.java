@@ -1,6 +1,7 @@
 package activitytest.example.com.a6_listviewtest;
 
 import android.content.Context;
+import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,16 +19,33 @@ public class FruitAdapter extends ArrayAdapter<Fruit> {
         resourceId = textViewResourceId;
     }
 
-    @androidx.annotation.NonNull
+    @NonNull
     @Override
-    public View getView(int position, @androidx.annotation.Nullable View convertView, @androidx.annotation.NonNull ViewGroup parent) {
+    public View getView(int position, @NonNull View convertView, @NonNull ViewGroup parent) {
         Fruit fruit = getItem(position);//获取当前的Fruit实例
-        View view = LayoutInflater.from(getContext()).inflate(resourceId,parent,false);
-        ImageView fruitImage = view.findViewById(R.id.fruit_image);
-        TextView fruitName = view.findViewById(R.id.fruit_name);
-        fruitImage.setImageResource(fruit.getImageId());
-        fruitName.setText(fruit.getName());
+        View view;
+        ViewHolder viewHolder;
+
+        if (convertView == null){
+            view = LayoutInflater.from(getContext()).inflate(resourceId,parent,false);
+            viewHolder = new ViewHolder();
+            viewHolder.fruitImage = view.findViewById(R.id.fruit_image);
+            viewHolder.fruitName = view.findViewById(R.id.fruit_name);
+            view.setTag(viewHolder);
+        }else{
+            view = convertView;
+            viewHolder = (ViewHolder) view.getTag();
+        }
+//        ImageView fruitImage = view.findViewById(R.id.fruit_image);
+//        TextView fruitName = view.findViewById(R.id.fruit_name);
+        viewHolder.fruitImage.setImageResource(fruit.getImageId());
+        viewHolder.fruitName.setText(fruit.getName());
 
         return view;
+    }
+
+    class ViewHolder{
+        ImageView fruitImage;
+        TextView fruitName;
     }
 }

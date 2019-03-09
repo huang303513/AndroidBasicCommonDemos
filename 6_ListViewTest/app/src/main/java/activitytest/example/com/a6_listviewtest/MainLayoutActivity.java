@@ -2,8 +2,11 @@ package activitytest.example.com.a6_listviewtest;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,10 +37,17 @@ public class MainLayoutActivity extends AppCompatActivity {
         setContentView(R.layout.main_layout);
 
         initFruits();//初始化数据
-        ArrayAdapter adapter = new ArrayAdapter(MainLayoutActivity.this,
+        FruitAdapter adapter = new FruitAdapter(MainLayoutActivity.this,
                 R.layout.fruit_item, fruitList);
         ListView listView = findViewById(R.id.list_view);
         listView.setAdapter(adapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Fruit fruit = fruitList.get(position);
+                Toast.makeText(MainLayoutActivity.this, fruit.getName(), Toast.LENGTH_SHORT).show();
+            }
+        });
 
     }
 

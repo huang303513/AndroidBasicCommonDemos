@@ -1,0 +1,62 @@
+{
+    "logs": [
+        {
+            "outputFile": "/Users/huangchengdu/Desktop/github/AndroidBasicCommonDemos/9_BroadcastTest2/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
+            "map": [
+                {
+                    "source": "/Users/huangchengdu/Desktop/github/AndroidBasicCommonDemos/9_BroadcastTest2/app/src/main/res/values/strings.xml",
+                    "from": {
+                        "startLines": "4,3,5",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "111,58,165",
+                        "endColumns": "52,51,52",
+                        "endOffsets": "159,105,213"
+                    },
+                    "to": {
+                        "startLines": "4,5,6",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "169,222,274",
+                        "endColumns": "52,51,52",
+                        "endOffsets": "217,269,322"
+                    }
+                },
+                {
+                    "source": "/Users/huangchengdu/Desktop/github/AndroidBasicCommonDemos/9_BroadcastTest2/app/src/main/res/values/dimens.xml",
+                    "from": {
+                        "startLines": "3,4",
+                        "startColumns": "4,4",
+                        "startOffsets": "92,151",
+                        "endColumns": "57,55",
+                        "endOffsets": "145,202"
+                    },
+                    "to": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,113",
+                        "endColumns": "57,55",
+                        "endOffsets": "108,164"
+                    }
+                },
+                {
+                    "source": "/Users/huangchengdu/Desktop/github/AndroidBasicCommonDemos/9_BroadcastTest2/app/src/main/res/values/styles.xml",
+                    "from": {
+                        "startLines": "6,15",
+                        "startColumns": "4,4",
+                        "startOffsets": "191,522",
+                        "endLines": "12,17",
+                        "endColumns": "12,12",
+                        "endOffsets": "481,679"
+                    },
+                    "to": {
+                        "startLines": "7,14",
+                        "startColumns": "4,4",
+                        "startOffsets": "327,618",
+                        "endLines": "13,16",
+                        "endColumns": "12,12",
+                        "endOffsets": "613,773"
+                    }
+                }
+            ]
+        }
+    ]
+}

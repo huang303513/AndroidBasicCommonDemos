@@ -3,6 +3,8 @@ package com.coolweather.a16_notificationtest;
 
 import android.app.Notification;
 import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -28,10 +30,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
+        Intent intent = new Intent(MainActivity.this, NotificationActivity.class);
+        PendingIntent pi = PendingIntent.getActivity(MainActivity.this,0, intent,0);
         switch (v.getId()){
             case R.id.send_notice:
                 NotificationUtil notificationUtil = new NotificationUtil(this);
-                notificationUtil.sendNotification("我是原生的通知栏标题","我是原生的通知栏内容");
+                notificationUtil.sendNotification("我是原生的通知栏标题","我是原生的通知栏内容", pi);
                 break;
             default:
                 break;

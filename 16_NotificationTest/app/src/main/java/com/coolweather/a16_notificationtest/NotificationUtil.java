@@ -3,6 +3,7 @@ package com.coolweather.a16_notificationtest;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.ContextWrapper;
 import android.graphics.BitmapFactory;
@@ -19,13 +20,13 @@ public class NotificationUtil extends ContextWrapper {
         super(context);
     }
 
-    public void sendNotification(String title, String content){
+    public void sendNotification(String title, String content, PendingIntent intent){
         if (Build.VERSION.SDK_INT >= 26){
             createNotificationChannel();
-            Notification notification = getNotification_26(title, content).build();
+            Notification notification = getNotification_26(title, content,intent).build();
             getManager().notify(1, notification);
         }else{
-            Notification notification = getNotification_25(title, content).build();
+            Notification notification = getNotification_25(title, content,intent).build();
             getManager().notify(1, notification);
 
         }
@@ -38,13 +39,14 @@ public class NotificationUtil extends ContextWrapper {
         return manager;
     }
 
+
     @RequiresApi(api = Build.VERSION_CODES.O)
     public void createNotificationChannel(){
         NotificationChannel channel = new NotificationChannel(sID,sName,NotificationManager.IMPORTANCE_HIGH);
         getManager().createNotificationChannel(channel);
     }
 
-    public NotificationCompat.Builder getNotification_25(String title, String content){
+    public NotificationCompat.Builder getNotification_25(String title, String content,PendingIntent intent){
         //以下是展示大图的通知
         NotificationCompat.BigPictureStyle style = new NotificationCompat.BigPictureStyle();
         style.setBigContentTitle("BigContentTitle");
@@ -62,11 +64,13 @@ public class NotificationUtil extends ContextWrapper {
                 .setSmallIcon(R.drawable.ic_notification)
                 .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_round))
                 .setStyle(style)
+                .setContentIntent(intent)
+                .setVibrate(new long[]{0, 1000, 1000, 1000})
                 .setAutoCancel(true);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
-    public Notification.Builder getNotification_26(String title, String content){
+    public Notification.Builder getNotification_26(String title, String content,PendingIntent intent){
         return new Notification.Builder(getApplicationContext(), sID)
                 .setContentTitle(title)
                 .setContentText(content)
@@ -74,6 +78,9 @@ public class NotificationUtil extends ContextWrapper {
                 .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_round))
                 .setStyle(new Notification.BigPictureStyle().bigPicture(BitmapFactory.decodeResource(getResources(), R.drawable.pic)))
                 .setNumber(1)
+                .setContentIntent(intent)
                 .setAutoCancel(true);
     }
+
+
 }

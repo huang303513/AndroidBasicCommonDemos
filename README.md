@@ -1,8 +1,8 @@
 #安卓开发学习的各种资料以及对应的demo
 
-##开源客户端学习研究
-准备通过这个客户端深入学习。
-[Coding Android开源客户端](https://github.com/huang303513/Coding-Android)</br>
+## 2019参考博客列表
+[android权限检测、提示框、设置相关流程](https://www.jianshu.com/p/dbe4d37731e6)</br>
+[约束布局ConstraintLayout看这一篇就够了](https://www.jianshu.com/p/17ec9bd6ca8a)</br>
 
 ##参考博客列表
 [Android Studio详细教程汇总 ](http://stormzhang.com/devtools/2015/06/17/android-studio-all/)</br>
@@ -18,7 +18,6 @@
 [Android Studio权威教程专栏](http://blog.csdn.net/column/details/zsl-androidstudio.html)</br>
 [各种源码解析分析](http://a.codekk.com/)</br>
 [值得阅读的android技术文章](https://github.com/zmywly8866/Worth-Reading-the-Android-technical-articles)</br>
-[android权限检测、提示框、设置相关流程](https://www.jianshu.com/p/dbe4d37731e6)</br>
 
 
 
